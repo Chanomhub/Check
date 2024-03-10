@@ -3,44 +3,51 @@
 #include <string.h>
 
 int main() {
-  char dir[1024];
-  DIR *d;
-  struct dirent *entry;
+    char dir[1024];
+    DIR *d;
+    struct dirent *entry;
 
-  printf("Pls specify the default folder location: ");
-  scanf("%s", dir);
+    printf("Pls specify the default folder location: ");
+    gets(dir);
 
-  chdir(dir);
-  strcat(dir, "/www/data");
-
-  d = opendir(dir);
-  if (d == NULL) {
-    printf("Unable to open folder: '%s' \n", dir);
-    return 1;
-  }
-
-  int num_map_files = 0;
-
-  while ((entry = readdir(d)) != NULL) {
-    char filename[1024];
-    strcpy(filename, entry->d_name);
-
-    if (strcmp(filename, "Armors.json") == 0 ||
-        strcmp(filename, "Weapons.json") == 0 ||
-        strcmp(filename, "Items.json") == 0 ||
-        strcmp(filename, "Skills.json") == 0) {
-      printf("found: '%s'\n", filename);
+    // ตรวจสอบและแก้ไข '\'
+    for (int i = 0; i < strlen(dir); i++) {
+        if (dir[i] == '\\') {
+            dir[i] = '/';
+        }
     }
 
-    if (strlen(filename) >= 3 && strncmp(filename, "Map", 3) == 0) {
-      num_map_files++;
-      printf("found: '%s'\n", filename);
+    chdir(dir);
+    strcat(dir, "/www/data");
+
+    d = opendir(dir);
+    if (d == NULL) {
+        printf("Unable to open folder: '%s' \n", dir);
+        return 1;
     }
-  }
 
-  printf("Found %d map files\n", num_map_files);
+    int num_map_files = 0;
 
-  closedir(d);
+    while ((entry = readdir(d)) != NULL) {
+        char filename[1024];
+        strcpy(filename, entry->d_name);
 
-  return 0;
+        if (strcmp(filename, "Armors.json") == 0 ||
+            strcmp(filename, "Weapons.json") == 0 ||
+            strcmp(filename, "Items.json") == 0 ||
+            strcmp(filename, "Skills.json") == 0) {
+            printf("found: '%s'\n", filename);
+        }
+
+        if (strlen(filename) >= 3 && strncmp(filename, "Map", 3) == 0) {
+            num_map_files++;
+            printf("found: '%s'\n", filename);
+        }
+    }
+
+    printf("Found %d map files\n", num_map_files);
+
+    closedir(d);
+
+    return 0;
 }
