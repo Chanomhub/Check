@@ -10,13 +10,13 @@ int main() {
     printf("Pls specify the default folder location: ");
     gets(dir);
 
-
+    // Support "/" and "\"
     for (int i = 0; i < strlen(dir); i++) {
         if (dir[i] == '\\') {
             dir[i] = '/';
         }
     }
-
+    
     chdir(dir);
     strcat(dir, "/www/data");
 
