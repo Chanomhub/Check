@@ -10,7 +10,7 @@ int main() {
     printf("Pls specify the default folder location: ");
     gets(dir);
 
-    // ตรวจสอบและแก้ไข '\'
+
     for (int i = 0; i < strlen(dir); i++) {
         if (dir[i] == '\\') {
             dir[i] = '/';
