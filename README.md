@@ -15,6 +15,6 @@ There’s no need to fuss over such matters, let's get started. Let's go!
 
 
 ### How to use (Dev)
-- 1. install [Clang](https://github.com/llvm/llvm-project)
-- 2. git clone https://github.com/Chanomhub/Check.git
+- install [Clang](https://github.com/llvm/llvm-project)
+- git clone https://github.com/Chanomhub/Check.git
 
