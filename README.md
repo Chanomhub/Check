@@ -6,7 +6,8 @@
 # Necessary conditions
 -   ̷G̷C̷C̷
 -   [Clang](https://github.com/llvm/llvm-project)
--   [Git]([https://github.com/llvm/llvm-project](https://git-scm.com/))
+-   [Git](https://git-scm.com/)
+-   (Use visual studio?) No, you don't need to because I use [Vim](https://www.vim.org/).
 -   That's all. No need to mess around, let's get started. Let's go!
 
 
