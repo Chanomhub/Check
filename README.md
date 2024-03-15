@@ -6,7 +6,7 @@
 # Necessary conditions
 -   ̷G̷C̷C̷
 -   [Clang](https://github.com/llvm/llvm-project)
--   
+-   That's it, no need to mess around, let's get started. Let's go!
 
 
 # How to use (Dev)
