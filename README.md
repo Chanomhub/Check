@@ -8,7 +8,8 @@
 -   [Clang](https://github.com/llvm/llvm-project)
 -   [Git](https://git-scm.com/)
 -   (Use visual studio?) No! you don't need to because I use [Vim](https://www.vim.org/).
--   That's all. There’s no need to fuss over such matters, let's get started. Let's go!
+   That's all.
+There’s no need to fuss over such matters, let's get started. Let's go!
 
 
 # How to use (Dev)
