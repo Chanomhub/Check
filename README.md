@@ -3,5 +3,5 @@
 - This add-on was developed by CrypticDay using C language.
 - It might not be very useful if you use this add-on for non-H games.
 # How to use
-1.  ̶̶i̶n̶s̶t̶a̶l̶l̶ ̶G̶C̶C̶  [install [Clang](https://github.com/llvm/llvm-project)]
+1. install [Clang](https://github.com/llvm/llvm-project)
 
