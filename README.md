@@ -1,5 +1,6 @@
 ### What is this?
-- This is an add-on for checking the correctness of file locations. And serves to distinguish which engine the game uses to develop.
+- This is an add-on for checking the correctness of file locations. 
+  And serves to distinguish which engine the game uses to develop.
 - This add-on was developed by CrypticDay using C language.
 - It might not be very useful if you use this add-on for non-H games.
 
