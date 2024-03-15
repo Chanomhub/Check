@@ -14,5 +14,5 @@
 # How to use (Dev)
 1. install [Clang](https://github.com/llvm/llvm-project)
 
-2. เ
+2. 
 
