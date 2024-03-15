@@ -6,11 +6,12 @@
 # Necessary conditions
 -   ̷G̷C̷C̷
 -   [Clang](https://github.com/llvm/llvm-project)
+-   [Git]([https://github.com/llvm/llvm-project](https://git-scm.com/))
 -   That's all. No need to mess around, let's get started. Let's go!
 
 
 # How to use (Dev)
 1. install [Clang](https://github.com/llvm/llvm-project)
 
-2. 
+2. เ
 
