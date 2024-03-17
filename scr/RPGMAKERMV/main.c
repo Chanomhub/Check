@@ -9,7 +9,7 @@ int main() {
 
     printf("Pls specify the default folder location: ");
     fgets(dir, sizeof(dir), stdin);
-    dir[strcspn(dir, "\n")] = '\0'; // Removing trailing newline if any
+    dir[strcspn(dir, "\n")] = '\0'; 
 
     for (int i = 0; i < strlen(dir); i++) {
         if (dir[i] == '\\') {
