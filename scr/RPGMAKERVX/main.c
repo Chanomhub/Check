@@ -49,7 +49,7 @@ int main() {
         
         if (strlen(filename) >= 3 && strncmp(filename, "Map", 3) == 0) {
             num_map_files++;
-            printf("found: '%s'\n", filename);
+            
         }
     }
     
