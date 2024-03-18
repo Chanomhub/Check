@@ -9,10 +9,9 @@
 -   [Clang](https://github.com/llvm/llvm-project)
 -   [Git](https://git-scm.com/)
 -   (Use visual studio?) No! you don't need to because I use [Vim](https://www.vim.org/).
-<br>
-  That's all.
-<br>
-There’s no need to fuss over such matters, let's get started. Let's go!
+
+
+(Why don't I just use GCC?) Because it's cooler! I'm joking because "Clang LLVM" is a new and stable compiler that can take your programs to the next level. If you don't want to waste time fixing your code.
 
 
 ### Build (Old)
@@ -25,6 +24,8 @@ There’s no need to fuss over such matters, let's get started. Let's go!
 - git clone https://github.com/Chanomhub/Check.git
 - cd scr\RPGMAKERMV\{Choose}
 - clang main.c
+
+
 
 # GCC
 ![Screenshot 2024-03-18 074718](https://github.com/Chanomhub/Check/assets/121768693/1b07502e-5fd6-4240-ad35-f18581f1877a)
