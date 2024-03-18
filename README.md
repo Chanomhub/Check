@@ -23,7 +23,7 @@
 ### Build (New)
 - install [Clang](https://github.com/llvm/llvm-project)
 - git clone https://github.com/Chanomhub/Check.git
-- cd Check/scr/RPGMAKERMV/{Choose} (Linux)
+- cd Check/scr/RPGMAKERMV (Linux)
 - cd Check\scr\RPGMAKERMV (Windows)
 - clang main.c
 
