@@ -16,7 +16,7 @@ There’s no need to fuss over such matters, let's get started. Let's go!
 
 
 ### Build (Old)
-- install [MinGW](https://sourceforge.net/projects/mingw/)
+- install [MinGW](https://www.mingw-w64.org/)
 - git clone https://github.com/Chanomhub/Check.git
 - cd scr\RPGMAKERMV\{Choose}
 - gcc main.c
