@@ -11,7 +11,7 @@
 -   (Use visual studio?) No! you don't need to because I use [Vim](https://www.vim.org/).
 
 
-(Why don't I just use GCC?) Because it's cooler! I'm joking because "Clang LLVM" is a new and stable compiler that can take your programs to the next level. If you don't want to waste time debugging your code, I haven't tested reverse engineering yet.
+(Why don't I just use GCC?) Because it's cooler! I'm joking because "Clang LLVM" is a new and stable compiler that can take your programs to the next level. If you don't want to waste time debugging your code.
 
 
 ### Build (Old)
