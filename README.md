@@ -25,3 +25,14 @@ There’s no need to fuss over such matters, let's get started. Let's go!
 - git clone https://github.com/Chanomhub/Check.git
 - cd scr\RPGMAKERMV\{Choose}
 - clang main.c
+
+# GCC
+![Screenshot 2024-03-18 074718](https://github.com/Chanomhub/Check/assets/121768693/1b07502e-5fd6-4240-ad35-f18581f1877a)
+# Clang
+![Screenshot 2024-03-18 074707](https://github.com/Chanomhub/Check/assets/121768693/dd2b9935-2f7f-4c99-9d7a-948337db80ef)
+
+The test results are not very accurate because when I built with "Clang" I modified the code to prevent buffer overflow, but in "GCC" I used old code.
+
+
+
+
