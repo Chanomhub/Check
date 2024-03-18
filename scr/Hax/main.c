@@ -1,10 +1,10 @@
-#include <ctype.h>  
-#include <string.h>  
-#include <stdint.h> 
+#include <ctype.h>
+#include <string.h>
+#include <stdint.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "hex.h" 
+#include "hex.h"
 
 
 bool is_valid_filename(const char *filename) {
