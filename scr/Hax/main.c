@@ -1,10 +1,9 @@
-
-#include <stdio.h>
 #include <ctype.h>  
 #include <string.h>  
 #include <stdint.h> 
 #include <stdbool.h>
-#include <stdlib.h> 
+#include <stdlib.h>
+#include <stdio.h>
 #include "hex.h" 
 
 
