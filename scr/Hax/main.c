@@ -5,17 +5,7 @@
 #include <string.h>
 #include "hex.h"
 
-bool is_valid_filename(const char *filename) {
-    // Check if the filename contains any directory traversal characters
-    return (strchr(filename, '/') == NULL && strchr(filename, '\\') == NULL);
-}
-
 bool search_in_exe(const char *filename, const uint8_t *search_data, size_t search_data_size) {
-    if (!is_valid_filename(filename)) {
-        printf("Invalid filename.\n");
-        return false;
-    }
-
     FILE *file = fopen(filename, "rb");
     if (!file) {
         printf("Failed to open file: %s\n", filename);
@@ -45,11 +35,29 @@ bool search_in_exe(const char *filename, const uint8_t *search_data, size_t sear
     return found;
 }
 
+// Function to sanitize file path by removing invalid characters
+void sanitize_filepath(char *path) {
+    int i, j = 0;
+    char sanitized[100]; // Assuming maximum path length of 100 characters
+    
+    for (i = 0; path[i] != '\0'; i++) {
+        if (isalnum(path[i]) || path[i] == '.' || path[i] == '/' || path[i] == '_' || path[i] == '-') {
+            sanitized[j++] = path[i];
+        }
+    }
+    sanitized[j] = '\0';
+    
+    strcpy(path, sanitized);
+}
+
 int main() {
     char filename[100];
     printf("Enter the filename of the .exe program: ");
     fgets(filename, sizeof(filename), stdin);
     filename[strcspn(filename, "\n")] = 0; // Removing newline character
+    
+    // Sanitize file path
+    sanitize_filepath(filename);
 
     bool found = search_in_exe(filename, data, sizeof(data));
     if (found) {
