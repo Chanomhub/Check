@@ -6,20 +6,28 @@
 #include "hex.h"
 
 bool search_in_exe(const char *filename, const uint8_t *search_data, size_t search_data_size) {
-    FILE *file = fopen(filename, "rb");
+    FILE *file;
+    uint8_t *buffer;
+    bool found = false;
+
+    // Check if the filename contains any directory traversal sequences
+    if (strchr(filename, '/') || strchr(filename, '\\')) {
+        printf("Invalid filename.\n");
+        return false;
+    }
+
+    file = fopen(filename, "rb");
     if (!file) {
         printf("Failed to open file: %s\n", filename);
         return false;
     }
 
-    uint8_t *buffer = (uint8_t *)malloc(search_data_size);
+    buffer = (uint8_t *)malloc(search_data_size);
     if (!buffer) {
         printf("Memory allocation failed.\n");
         fclose(file);
         return false;
     }
-
-    bool found = false;
 
     while (!feof(file)) {
         if (fread(buffer, 1, search_data_size, file) == search_data_size) {
