@@ -39,8 +39,12 @@ If you don't want to waste time debugging your code.
 |     Type      |   Automatic   |   Advanced    |
 | :---: | :---: | :---: |
 | RPGM  | ✔️  | ❌
-| Content Cell  | Content Cell  |
-
-
-
+| Unity  | ❌  | ❌
+|  RPG Wolf  | ❌  | ❌
+| Godot Engine  | ❌  | ❌
+| Ren’Py  | ❌  | ❌
+| Unreal Engine  | ❌  | ❌
+| Adobe Flash Player  | ❌  | ❌
+| Game Maker Studio 2  | ❌  | ❌
+| Pixel Game Maker MV player  | ❌  | ❌
 
