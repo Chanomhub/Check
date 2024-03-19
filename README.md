@@ -34,7 +34,7 @@ If you don't want to waste time debugging your code.
 
 ### Mode
 "Automatic" this will be the default. <br>
-"Advanced" You must run it manually in cases where it can be determined that the game uses a game development engine.
+"Advanced" You must run it manually in case the game cannot be determined using the game development engine.
 
 |     Type      |   Automatic   |   Advanced    |
 | :---: | :---: | :---: |
