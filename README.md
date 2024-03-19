@@ -36,7 +36,7 @@ If you don't want to waste time debugging your code.
 "Automatic" this will be the default. <br>
 [Confirm files name, folders format, files extension] <br>
 "Advanced" You must run it manually in case the game cannot be determined using the game development engine. <br>
-[Check Hex, Decode, Details]
+[Check Hex file, Decode file, Details file]
 
 |     Type      |   Automatic   |   Advanced    |
 | :---: | :---: | :---: |
