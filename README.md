@@ -34,7 +34,9 @@ If you don't want to waste time debugging your code.
 
 ### Mode
 "Automatic" this will be the default. <br>
-"Advanced" You must run it manually in case the game cannot be determined using the game development engine.
+[Confirm files name, folders format, files extension] <br>
+"Advanced" You must run it manually in case the game cannot be determined using the game development engine. <br>
+[Check Hex, Decode, Details]
 
 |     Type      |   Automatic   |   Advanced    |
 | :---: | :---: | :---: |
