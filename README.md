@@ -38,7 +38,7 @@ If you don't want to waste time debugging your code.
 
 |     Type      |   Automatic   |   Advanced    |
 | ------------- | ------------- | ------------- |
-| RPGM  | Content Cell  |
+| RPGM  | ✔️  | ❌
 | Content Cell  | Content Cell  |
 
 
