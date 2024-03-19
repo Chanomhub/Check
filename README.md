@@ -37,7 +37,7 @@ If you don't want to waste time debugging your code.
 "Advanced" You must run it manually in cases where it can be determined that the game uses a game development engine.
 
 |     Type      |   Automatic   |   Advanced    |
-| ------------- | ------------- | ------------- |
+| :---: | :---: | :---: |
 | RPGM  | ✔️  | ❌
 | Content Cell  | Content Cell  |
 
