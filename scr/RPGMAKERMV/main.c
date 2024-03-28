@@ -42,17 +42,35 @@ int main() {
         }
     }
 
-    chdir(dir);
-    strcat(dir, "/data");
+    // Open JSON file to store all file paths
+    create_json("file_paths.json", dir);
 
+    // Try different subfolders if 'data' is not found
+    const char *subfolders[] = {"data", "www/data"};
+    int num_subfolders = sizeof(subfolders) / sizeof(subfolders[0]);
+    int found = 0;
+    for (int i = 0; i < num_subfolders; ++i) {
+        char temp_path[MAX_PATH_LENGTH];
+        snprintf(temp_path, sizeof(temp_path), "%s/%s", dir, subfolders[i]);
+        if ((d = opendir(temp_path)) != NULL) {
+            strcat(dir, "/");
+            strcat(dir, subfolders[i]);
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("Unable to find the default subfolder.\n");
+        return 1;
+    }
+
+    // Start scanning files in the selected folder
     d = opendir(dir);
     if (d == NULL) {
         printf("Unable to open folder: '%s'\n", dir);
         return 1;
     }
-
-    // Create a JSON file to store all file paths
-    create_json("file_paths.json", dir);
 
     while ((entry = readdir(d)) != NULL) {
         char filename[MAX_PATH_LENGTH];
@@ -61,14 +79,14 @@ int main() {
 
         // Check if the file meets the criteria to include in the JSON
         if ((strcmp(filename, "Armors.json") == 0 ||
-            strcmp(filename, "States.json") == 0 ||
-            strcmp(filename, "Enemies.json") == 0 ||
-            strcmp(filename, "MapInfos.json") == 0 ||
-            strcmp(filename, "Actors.json") == 0 ||
-            strcmp(filename, "Classes.json") == 0 ||
-            strcmp(filename, "Weapons.json") == 0 ||
-            strcmp(filename, "Items.json") == 0 ||
-            strcmp(filename, "Skills.json") == 0) ||
+             strcmp(filename, "States.json") == 0 ||
+             strcmp(filename, "Enemies.json") == 0 ||
+             strcmp(filename, "MapInfos.json") == 0 ||
+             strcmp(filename, "Actors.json") == 0 ||
+             strcmp(filename, "Classes.json") == 0 ||
+             strcmp(filename, "Weapons.json") == 0 ||
+             strcmp(filename, "Items.json") == 0 ||
+             strcmp(filename, "Skills.json") == 0) ||
             (strlen(filename) >= 3 && strncmp(filename, "Map", 3) == 0)) {
 
             // Append file path to the existing JSON file
@@ -91,3 +109,4 @@ int main() {
 
     return 0;
 }
+
