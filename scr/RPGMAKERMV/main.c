@@ -1,15 +1,40 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <dirent.h>
 #include <string.h>
 
+#define MAX_PATH_LENGTH 1024
+
+void create_json(const char *filename, const char *path) {
+    FILE *file = fopen(filename, "w");
+    if (file == NULL) {
+        printf("Error creating JSON file: %s\n", filename);
+        return;
+    }
+    fprintf(file, "{\n \"dir\": [\n");
+    fprintf(file, "  \"%s\"\n", path); // Write the initial path
+    fprintf(file, " ],\n \"files\": [\n"); // Open the files array
+    fclose(file);
+}
+
+void append_to_json(const char *filename, const char *file_path) {
+    FILE *file = fopen(filename, "a");
+    if (file == NULL) {
+        printf("Error appending to JSON file: %s\n", filename);
+        return;
+    }
+    fprintf(file, "  \"%s\",\n", file_path); // Append the file path to the files array
+    fclose(file);
+}
+
 int main() {
-    char dir[1024];
+    char dir[MAX_PATH_LENGTH];
     DIR *d;
     struct dirent *entry;
 
-    printf("Pls specify the default folder location: ");
+    printf("Please specify the default folder location: ");
     fgets(dir, sizeof(dir), stdin);
-    dir[strcspn(dir, "\n")] = '\0'; 
+    dir[strcspn(dir, "\n")] = '\0';
 
     for (int i = 0; i < strlen(dir); i++) {
         if (dir[i] == '\\') {
@@ -18,22 +43,24 @@ int main() {
     }
 
     chdir(dir);
-    strcat(dir, "/www/data");
+    strcat(dir, "/data");
 
     d = opendir(dir);
     if (d == NULL) {
-        printf("Unable to open folder: '%s' \n", dir);
+        printf("Unable to open folder: '%s'\n", dir);
         return 1;
     }
 
-    int num_map_files = 0;
+    // Create a JSON file to store all file paths
+    create_json("file_paths.json", dir);
 
     while ((entry = readdir(d)) != NULL) {
-        char filename[1024];
+        char filename[MAX_PATH_LENGTH];
         strncpy(filename, entry->d_name, sizeof(filename) - 1);
-        filename[sizeof(filename) - 1] = '\0'; // Ensuring null termination
+        filename[sizeof(filename) - 1] = '\0'; // Ensure null termination
 
-        if (strcmp(filename, "Armors.json") == 0 ||
+        // Check if the file meets the criteria to include in the JSON
+        if ((strcmp(filename, "Armors.json") == 0 ||
             strcmp(filename, "States.json") == 0 ||
             strcmp(filename, "Enemies.json") == 0 ||
             strcmp(filename, "MapInfos.json") == 0 ||
@@ -41,15 +68,24 @@ int main() {
             strcmp(filename, "Classes.json") == 0 ||
             strcmp(filename, "Weapons.json") == 0 ||
             strcmp(filename, "Items.json") == 0 ||
-            strcmp(filename, "Skills.json") == 0) {
-            printf("found: '%s'\n", filename);
-        }
+            strcmp(filename, "Skills.json") == 0) ||
+            (strlen(filename) >= 3 && strncmp(filename, "Map", 3) == 0)) {
 
-        if (strlen(filename) >= 3 && strncmp(filename, "Map", 3) == 0) {
-            num_map_files++;
-            printf("found: '%s'\n", filename);
+            // Append file path to the existing JSON file
+            char file_path[MAX_PATH_LENGTH];
+            snprintf(file_path, sizeof(file_path), "%s/%s", dir, filename);
+            append_to_json("file_paths.json", file_path);
         }
     }
+
+    // Close the files array and the JSON object
+    FILE *file = fopen("file_paths.json", "a");
+    if (file == NULL) {
+        printf("Error appending to JSON file: file_paths.json\n");
+        return 1;
+    }
+    fprintf(file, " ]\n}\n");
+    fclose(file);
 
     closedir(d);
 
