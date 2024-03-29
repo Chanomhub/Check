@@ -11,9 +11,9 @@ void create_json(const char *filename, const char *path) {
         printf("Error creating JSON file: %s\n", filename);
         return;
     }
-    fprintf(file, "{\n \"dir\": [\n");
+    fprintf(file, "{\n \"dir\": {\n");
     fprintf(file, "  \"%s\"\n", path); // Write the initial path
-    fprintf(file, " ],\n \"files\": [\n"); // Open the files array
+    fprintf(file, " },\n \"files\": {\n"); // Open the files array
     fclose(file);
 }
 
@@ -102,7 +102,7 @@ int main() {
         printf("Error appending to JSON file: file_paths.json\n");
         return 1;
     }
-    fprintf(file, " ]\n}\n");
+    fprintf(file, " ],\n};\n");
     fclose(file);
 
     closedir(d);
