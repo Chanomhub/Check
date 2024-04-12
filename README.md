@@ -51,7 +51,7 @@ If you don't want to waste time debugging your code.
 | Pixel Game Maker MV player  | ❌  | ❌
 
 ### Credit
-Default: [ripgrep](https://github.com/BurntSushi/ripgrep) by [BurntSushi](https://github.com/BurntSushi)
-Language: Rust
+Default: [ripgrep](https://github.com/BurntSushi/ripgrep) by [BurntSushi](https://github.com/BurntSushi) <br>
+Language: Rust <br>
 Version: 14.1.0
 
