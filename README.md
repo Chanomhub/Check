@@ -50,3 +50,8 @@ If you don't want to waste time debugging your code.
 | Game Maker Studio 2  | ❌  | ❌
 | Pixel Game Maker MV player  | ❌  | ❌
 
+### Credit
+Default: [ripgrep](https://github.com/BurntSushi/ripgrep) by [BurntSushi](https://github.com/BurntSushi)
+Language: Rust
+Version: 14.1.0
+
